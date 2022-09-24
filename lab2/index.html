@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма обратной связи</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav>
+            <a href="authentification.html">Форма для аутентификации</a>
+        </nav>
+    </header>
+
+    <main>
+        <form class="form" method="POST" action="http://httpbin.org/post" enctype="multipart/form-data">
+
+            <h1 class="form-title">Форма обратной связи</h1>
+
+            <div class="form-group">
+                <input class="form-input" type="text" name="fio" id="fio" placeholder="Введите ФИО" required>
+                <label class="form-label" for="fio">FIO</label>
+            </div>
+            
+            <div class="form-group">    
+                <input class="form-input" type="email" name="email" id="email" value="qq@email.com" placeholder="Введите Email" required>
+                <label class="form-label" for="email">Email</label>
+            </div>
+
+            <fieldset class="form-whereknow">
+                <legend>Откуда вы нас узнали</legend>
+                
+                <div class="form-radio">
+                    <input type="radio" name="source" id="friends" vale="friends">
+                    <label for="friends">Рассказали друзья</label>
+                </div>
+                <div class="form-radio">
+                    <input type="radio" name="source" id="intertet" vale="intertet">
+                    <label for="intertet">Реклама в интернете</label>
+                </div>
+            </fieldset>
+
+            <div>
+                <label for="category">Категория обращения: </label>
+                <select class="form-select" name="category" id="category" >
+                    <option value="1">Предложение</option>
+                    <option value="2">Жалоба</option>
+                </select>
+            </div>
+            
+            <div>
+                <textarea class="form-textarea" name="msg" id="msg" cols="40" rows="5" placeholder="Текст сообщения"></textarea>
+            </div>
+
+            <div class="form-checkbox">
+                <input type="checkbox" name="agreement" id="agreement">
+                <label for="agreement">Согласен с обработкой персональных данных</label>
+            </div>
+
+            <div>
+                <label class="file-btn" for="attachment">Добавить файл</label>
+                <input class="form-file" type="file" name="attachment" id="attachment">
+            </div>
+
+            <button class="btn" type="submit">Отправить</button>
+
+        </form>
+    </main>
+</body>
+</html>

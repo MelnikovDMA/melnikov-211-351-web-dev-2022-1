@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;   
+}
+
+body, .header {
+    background-image: url(images/phon.jpg);
+    background-size: cover;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 1rem;
+    }
+
+.header:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.header a {
+    text-decoration: none;
+    color: black;
+}
+
+.form-title {
+    text-align: center;
+    margin: 0 0 30px 0;
+}
+
+.form2 {
+    width: 300px;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 5px 16px black;
+    background-color: lightgrey;
+    letter-spacing: 1px;
+}
+
+.form {
+    width: 500px;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 5px 16px black;
+    background-color: lightgrey;
+    letter-spacing: 1px;
+}
+
+.form-input, .btn, .btn, .form-select, .form-textarea, .form-file {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-input {
+    width: 100%;
+    margin: 0 0 5px 0;
+    border: none;
+    border-bottom: 1px solid lightslategray;
+    background-color: transparent;
+    outline: none;
+}
+
+.form-select {
+    margin: 0 0 5px 0;
+    border: none; 
+    background-color: transparent;
+    outline: none;
+    font-weight: bold;
+}
+
+.form-whereknow {
+    position: relative;
+    padding-left: 0;
+    margin-left: 0;
+    margin-bottom: 10px;
+    border: none;
+    
+}
+
+.form-textarea {
+    background-color: transparent;
+    outline: none;
+    margin: 0 0 10px 0;
+    max-width: 500px;
+    max-height: 250px;
+}
+
+.form-checkbox {
+    margin: 0 0 10px 0;
+}
+
+.form-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.file-btn {
+    color: white;
+    background-color: lightslategray;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px 15px;
+    font-size: 10px;
+}
+
+.file-btn:hover {
+    background-color: rgb(141, 146, 151);
+}
+
+.btn {
+    margin: 10px 0 0 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #0064d6;
+    outline: none;
+}
+
+.btn:hover {
+    background-color: #499eff;
+}
