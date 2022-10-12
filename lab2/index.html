@@ -34,29 +34,29 @@
                 <legend>Откуда вы нас узнали</legend>
                 
                 <div class="form-radio">
-                    <input type="radio" name="source" id="friends" vale="friends">
+                    <input type="radio" name="source" id="friends" value="friends" required>
                     <label for="friends">Рассказали друзья</label>
                 </div>
                 <div class="form-radio">
-                    <input type="radio" name="source" id="intertet" vale="intertet">
+                    <input type="radio" name="source" id="intertet" value="intertet" required>
                     <label for="intertet">Реклама в интернете</label>
                 </div>
             </fieldset>
 
             <div>
                 <label for="category">Категория обращения: </label>
-                <select class="form-select" name="category" id="category" >
+                <select class="form-select" name="category" id="category">
                     <option value="1">Предложение</option>
                     <option value="2">Жалоба</option>
                 </select>
             </div>
             
             <div>
-                <textarea class="form-textarea" name="msg" id="msg" cols="40" rows="5" placeholder="Текст сообщения"></textarea>
+                <textarea class="form-textarea" name="msg" id="msg" cols="40" rows="5" placeholder="Текст сообщения" required></textarea>
             </div>
 
             <div class="form-checkbox">
-                <input type="checkbox" name="agreement" id="agreement">
+                <input type="checkbox" name="agreement" id="agreement" required>
                 <label for="agreement">Согласен с обработкой персональных данных</label>
             </div>
 

@@ -1,0 +1,311 @@
+body {
+    margin: 0;
+}
+
+.main_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(images/back_phon.jpg) no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    background: linear-gradient(to top right, #585858 0%, #ffffff 100%);
+    border-bottom: 3px solid #dedede;
+}
+
+.signin img {
+    height: 25px;
+    width: 25px;
+}
+
+.main_menu {
+    width: 50%;
+}
+
+.main_menu ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding: 30px 35px 20px 35px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+a:hover {
+    background: linear-gradient(to top right, #888888 0%, #dedede 100%) ;
+}
+
+.logo img {
+    width: 70px;
+    height: 70px;
+}
+
+.main_index {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.for_m_w {
+    display: flex;
+    gap: 1.5rem ;
+    text-align: center;
+}
+
+.photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.photo img {
+    width: 550px;
+    height: 550px;
+    border-radius: 5px;
+    border: 5px solid white;
+}
+
+.photo_text {
+    background-color: white;
+    margin: 0;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 25%;
+}
+
+.popular_h1{
+    background-color: white;
+    width: 30%;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid black ;
+}
+
+.shoes_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.shoes_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightgrey;
+    border: 5px solid white;
+    border-radius: 10px;
+}
+
+.shoes_image img {
+    width: 250px;
+    height: 200px;
+    border-bottom: 2px solid black;
+}
+
+.shoes_mark {
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+.shoes_description {
+    font-size: 13px;
+    text-align: center;
+    color: rgb(92, 100, 109);
+}
+
+.shoes_cost {
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn_buy {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 30px 5px 30px;
+    margin: 0 0 10px 0;
+    color: white;
+    background-color: black;
+    outline: none;
+}
+
+.btn_buy:hover {
+    background-color: rgb(85, 85, 85);
+}
+
+.footer {
+    background: linear-gradient(to top right, #585858 0%, #ffffff 100%);
+    width: 100%;
+    text-align: left;
+    margin-top: 30px;
+    border-top: 5px solid white;
+    padding: 3px 0 5px 0;
+}
+
+.main_catalog {
+    display: flex;
+    margin-top: 100px;
+}
+
+.form_filter {
+    width: 10rem;
+    margin: 0 100px 0 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar_section {
+    background-color: lightgrey;
+    border: 3px solid black ;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    
+}
+
+.filter_h1 {
+    background-color: lightgrey;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 10px 30px 10px 30px;
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: lightgrey;
+    margin: 0 0 10px 0;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+    border: 3px solid black;
+    width: 5rem;
+
+}
+
+.btn_accept {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 30px 5px 30px;
+    color: white;
+    background-color: black;
+    outline: none;
+    border: 1px solid white;
+}
+
+.btn_accept:hover {
+    background-color: rgb(85, 85, 85);
+}
+
+.main_about, .main_contacts {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 65vh;
+    width: 40%;
+    color: white;
+    background-color: black;
+    border: 5px solid white;
+    border-radius: 30px;
+    padding: 50px;
+}
+
+.main_signin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 65vh;
+    margin-top: 200px;
+}
+
+.form-title {
+    text-align: center;
+    margin: 0 0 30px 0;
+}
+
+.form2 {
+    width: 300px;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 5px 16px black;
+    background-color: lightgrey;
+    letter-spacing: 1px;
+}
+
+.form-input, .btn_in, .btn_accept, .btn_buy {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+
+p, h2, h1, a, .sidebar_section {
+    font-family: 'Roboto', sans-serif
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-input {
+    width: 100%;
+    margin: 0 0 5px 0;
+    border: none;
+    border-bottom: 1px solid lightslategray;
+    background-color: transparent;
+    outline: none;
+}
+
+.form-checkbox {
+    margin: 0 0 10px 0;
+}
+
+.form-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.btn_in {
+    margin: 10px 0 0 0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #0064d6;
+    outline: none;
+}
+
+.btn_in:hover {
+    background-color: #499eff;
+}
