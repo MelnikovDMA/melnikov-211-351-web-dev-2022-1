@@ -1,0 +1,24 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 250px;
+}
+
+.menu {
+    align-items: center;
+}
+
+li {
+    list-style-type: none;
+    margin: 100px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding: 0 20px;
+    border-left: 3px solid black;
+    border-right: 3px solid black ;
+}
