@@ -6,13 +6,15 @@ body {
 }
 
 .menu {
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 li {
     list-style-type: none;
-    margin: 100px;
     text-align: center;
+    margin-bottom: 100px;
 }
 
 a {
