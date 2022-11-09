@@ -25,20 +25,6 @@ body::after {
     margin: 0 auto;
 }
 
-.clearfix::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.main-menu {
-    float: left;
-}
-
-.profile {
-    float: right;
-}
-
 .main-menu ul {
     list-style: none;
     padding: 0;
@@ -62,11 +48,11 @@ body::after {
 }
 
 .sidebar {
-    float: left;
     padding: 1rem 0;
     width: 15rem;
     position: sticky;
     top: 55px;
+    flex-shrink: 0;
 }
 
 .sidebar-section {
@@ -84,7 +70,6 @@ body::after {
 
 .page-content {
     padding: 1rem;
-    margin-left: 15rem;
 }
 
 .products-category-header {
@@ -92,12 +77,11 @@ body::after {
 }
 
 .product-card {
-    display: inline-block;
-    height: 22rem;
-    width: 31rem;
+    display: flex;
+    height: 2rem;
+    width: 1rem;
     border: 2px solid #e7a414;
     border-radius: 5px;
-    margin: 0 0.625rem 0.625rem 0;
     background-color: rgb(193, 193, 193);
 }
 
@@ -182,4 +166,64 @@ body::after {
     background-color: rgb(51,51,51);
     color: white;
     font-size: 1.5rem;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.profile {
+    margin-left: auto;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+}
+
+@media all and (max-width: 768px) {
+    .main-menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .direction-column {
+        flex-direction: column;
+    }
+
+    .protile {
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;    
+    }
+
+    .product-list{
+        justify-content: center;
+    }
+
+    .products-category-header {
+        text-align: center;
+    }
+
+    .main {
+        align-items: center;
+    }
+
+    .product-card {
+        flex-direction: column;
+        width: 95%;
+        max-width: 350px;
+        height: auto;
+    }
+
+    .product-details .information {
+        height: auto;
+    }
+
+    .header {
+        position: static;
+    }
 }
