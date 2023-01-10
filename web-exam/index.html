@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="d-flex flex-row ">
                     <a class="navbar-brand" href="index.html">
-                        <img class="logo" width="150" height="100" src="images/logo.png" alt="">
+                        <img class="logo img-fluid" width="150" height="100" src="images/logo.png" alt="">
                     </a>
                     <div class="px-5 text-center">
                         <h1 class="text-white py-2">MosTravel</h1>
@@ -55,10 +55,10 @@
                 <h2 class="text-center">Список пешегодных маршрутов</h2>
                 <div class="search-filter row justify-content-between py-3">
                     <div class="col-12 col-md-6">
-                        <input type="text" class="search-field form-control" placeholder="Поиск по названию">  
+                        <input type="text" class="search-field form-control" id="searchByNameR" placeholder="Поиск по названию">  
                     </div>
                     <div class="col-12 col-md-6">
-                        <select name="object" class="obj-select form-select" placeholder="Основной объект">
+                        <select name="object" id="objSelect" class="obj-select form-select" placeholder="Основной объект">
                             <option value="default" selected disabled>Основной объект</option>
                             <option value="notselected">Не выбрано</option>
                         </select>
@@ -80,9 +80,11 @@
                             <span class="text-white fw-bold">...</span>
                         </div>
                     </div>
-                </div>
                 
-                <div class="table-route-list" id="tableRouteList"></div>
+                    <div class="table-route-list" id="tableRouteList"></div>
+
+                    <div class="pagination-btns"></div>
+                </div>
             </div>
 
 
@@ -95,6 +97,8 @@
     </footer>
 
     <script src="main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 
 </body>
 </html>
