@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link link-light" href="yourinfo.html"><p class="scale-a">Личный кабинет</p></a>
+                            <a class="nav-link link-light fs-4" href="yourinfo.html"><p class="scale-a">Личный кабинет</p></a>
                         </li>
                     </ul>
                 </div>
@@ -35,30 +35,30 @@
         </nav>
     </header>
 
-    <main class="main-bg">
-        <section class="head-section py-5">
+    <main>
+        <section class="head-section py-5 main-bg">
             <div class="container mx-auto">
                 <div class="row">
                     <div class="col-12 col-md-6">
                         <img class="img-fluid" src="images/logo.png ">
                     </div>
-                    <div class="col-12 col-md-6 text-center py-3">
-                        <h5 class="py-3"><strong>MosTravel</strong> - лучше в городе не найти.</h5>
-                        <p>Наша компания занимается экскурсиями уже более 5 лет. За этот срок никто еще не терялся. Предоставляем экскурсии по определенным маршрутам. Присутствуют различные опции и скидки.</p>
+                    <div class="col-12 col-md-6 text-center py-3 align-items-center">
+                        <h5 class="py-3 oran-text fs-3"><strong class="oran-text">MosTravel</strong> - лучше в городе не найти.</h5>
+                        <p class="fs-5">Наша компания занимается экскурсиями уже более 5 лет. За этот срок никто еще не терялся. Предоставляем экскурсии по определенным маршрутам. Присутствуют различные опции и скидки.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="route-list">
+        <section class="route-list main-bg">
             <div class="container">
-                <h2 class="text-center">Список пешегодных маршрутов</h2>
+                <h2 class="text-center oran-text">Список пешегодных маршрутов</h2>
                 <div class="search-filter row justify-content-between py-3">
-                    <div class="col-12 col-md-6">
-                        <input type="text" class="search-field form-control" id="searchByNameR" placeholder="Поиск по названию">  
+                    <div class="col-12 col-md-6 pb-2">
+                        <input type="text" class="search-field form-control bg-dark text-white" id="searchByNameR" placeholder="Поиск по названию">  
                     </div>
                     <div class="col-12 col-md-6">
-                        <select name="object" id="objSelect" class="obj-select form-select" placeholder="Основной объект">
+                        <select name="object" id="objSelect" class="obj-select form-select bg-dark text-white" placeholder="Основной объект">
                             <option value="default" selected disabled>Основной объект</option>
                             <option value="notselected">Не выбрано</option>
                         </select>
@@ -67,17 +67,17 @@
 
                 <div class="container table-of-routes">
                     <div class="row text-center p-0 border-bottom">
-                        <div class="col-2 border-start border-top border-end">
-                            <span class="text-white fw-bold">Название</span>
+                        <div class="col-2 border-start border-top border-end py-3 ">
+                            <span class="oran-text fw-bold">Название</span>
                         </div>
-                        <div class="col-4 border-top border-end">
-                            <span class="text-white fw-bold">Описание</span>
+                        <div class="col-4 border-top border-end py-3">
+                            <span class="oran-text fw-bold">Описание</span>
                         </div>
-                        <div class="col-4 border-top border-end">
-                            <span class="text-white fw-bold">Основные объекты</span>
+                        <div class="col-4 border-top border-end py-3">
+                            <span class="oran-text fw-bold">Основные объекты</span>
                         </div>
-                        <div class="col-2 border-top border-end">
-                            <span class="text-white fw-bold">...</span>
+                        <div class="col-2 border-top border-end py-3">
+                            <span class="oran-text fw-bold">...</span>
                         </div>
                     </div>
                 
@@ -89,67 +89,178 @@
             </div>
         </section>
 
-        <section class="guides-list">
-            <div class="container py-4">
-                <h2 class="text-center">Доступные гиды по маршруту - <span id="nameRouteForGuides"></span></h2>
+        <section class="map-2gis main-bg pb-3">
+            <div class="container">
+                <h2 class="text-center pb-3 oran-text">Карта</h2>
+                <div class="map-container" id="mapContainer">
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="guides-list main-bg ">
+            <div class="container py-4" hidden id="headOfTableGuides">
+                <h2 class="text-center oran-text">Доступные гиды по маршруту - <span id="nameRouteForGuides"></span></h2>
 
                 <div class="search-form-guides row py-4 ">
                     <div class="select-lan-div col-5">
-                        <select class="form-select" name="lang" id="langSelect">
+                        <select class="form-select bg-dark text-white" name="lang" id="langSelect">
                             <option value="default" selected disabled>Язык экскурсии</option>
                         </select>
                     </div>
                     <div class="work-exp col-7 row">
-                        <div class="col-3"><p>Опыт работы</p></div>
+                        <div class="col-3 oran-text fs-5"><p>Опыт работы</p></div>
                         <div class="col-3">
-                            <input type="text" class="form-control" id="expFrom" placeholder="От">
+                            <input type="text" class="form-control bg-dark text-white" id="expFrom" placeholder="От">
                         </div>
                         <div class="col-3">
-                            <input type="text" class="form-control" id="expTo" placeholder="До">
+                            <input type="text" class="form-control bg-dark text-white" id="expTo" placeholder="До">
                         </div>
                     </div>
                 </div>
 
                 <div class="container table-of-guides">
                     <div class="row text-center p-0 border-bottom">
-                        <div class="col-1 border-start border-top border-end overflow-hidden">
-                            <span class="text-white fw-bold"></span>
+                        <div class="col-1 border-start border-top border-end py-3">
+                            <span class="oran-text fw-bold">...</span>
                         </div>
-                        <div class="col-3 border-top border-end">
-                            <span class="text-white fw-bold">ФИО</span>
+                        <div class="col-3 border-top border-end py-3">
+                            <span class="oran-text fw-bold">ФИО</span>
                         </div>
-                        <div class="col-3 border-top border-end">
-                            <span class="text-white fw-bold">Язык</span>
+                        <div class="col-2 border-top border-end py-3">
+                            <span class="oran-text fw-bold">Язык</span>
                         </div>
-                        <div class="col-1 border-top border-end">
-                            <span class="text-white fw-bold">Опыт работы</span>
+                        <div class="col-2 border-top border-end py-3">
+                            <span class="oran-text fw-bold">Опыт работы</span>
                         </div>
-                        <div class="col-2 border-top border-end">
-                            <span class="text-white fw-bold">Стоимость услуг в час</span>
+                        <div class="col-2 border-top border-end py-3">
+                            <span class="oran-text fw-bold">Цена услуги/час</span>
                         </div>
-                        <div class="col-2 border-top border-end">
-                            <span class="text-white fw-bold">...</span>
+                        <div class="col-2 border-top border-end py-3">
+                            <span class="oran-text fw-bold">...</span>
                         </div>
                     </div>
 
                     <div class="table-guides-list"></div>
-
-
                 </div>
-
-
             </div>
         </section>
+        
+        <div class="modal fade  modal-css" id="modalForOrder" data-bs-backdrop="static" tabindex="-1"  aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
 
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5">Оформление заявки</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div id="draftOfOffer">
+                            <div class="name-of-guide">
+                                <div class="row">
+                                    <div class="col-4 oran-text">
+                                        <span>ФИО гида - </span>
+                                    </div>
+                                    <div class="col-8">
+                                        <span id="nameOfGuideModal"></span>
+                                        <input type="text" hidden name="guideId" id="guideId">
+                                        <input type="text" hidden name="guideCost" id="guideCost">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="name-of-route">
+                                <div class="row">
+                                    <div class="col-4 oran-text">
+                                        <span>Название маршрута - </span>
+                                    </div>
+                                    <div class="col-8">
+                                        <span id="nameOfRouteModal"></span>
+                                        <input type="text" hidden name="routeId" id="routeId">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="inputs-for-cost">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="date" class="oran-text">Дата экскурсии:</label>
+                                        <input type="date" class="form-control" id="date" name="date">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="time" class="oran-text">Время начала:</label>
+                                        <input type="time" min="00:00" max="23:59" step="1800" class="form-control" name="time" id="time">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="duration" class="oran-text">Длительность экскурсии:</label>
+                                        <select id="duration" class="form-select">
+                                            <option value="1" selected>1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="persons" class="oran-text">Количество человек:</label>
+                                        <input type="number" min="1" max="10" class="form-control" name="persons" id="persons" value="1">
+                                    </div>
+
+                                    <div class="dop-options">
+                                        <span class=" oran-text">Дополнительные опции:</span>
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <input type="checkbox" class="form-check-input" id="dopOption1">
+                                            </div>
+                                            <div class="col-11">
+                                                <label for="dopOption1" class="form-check-label"> Использовать скидку для пенсионеров. Стоимость уменьшается на 25%.</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-1">
+                                                <input type="checkbox" class="form-check-input" id="dopOption2">
+                                            </div>
+                                            <div class="col-11">
+                                                <label for="dopOption2" class="form-check-label">Легкие закуски и горячие напитки во время экскурсии. Увеличивают стоимость на
+                                                    1000 рублей за каждого посетителя.</label>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="sum-of-cost oran-text">
+                                <span>Итоговая стоимость:  <span id="price"></span> &#8381</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                        <button type="button" id="submitionOfOrder" class="btn btn-primary">Отправить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
     </main>
 
-    <footer>
-
+    <footer class="bg-black">
+        <div class="container">
+            <div class="d-flex align-items-center p-3">
+                <span class="text-white text-center">&copy; 2023 MosTravel</span>
+            </div>
+        </div>
     </footer>
 
     <script src="main.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://mapgl.2gis.com/api/js/v1"></script>
 
 </body>
 </html>

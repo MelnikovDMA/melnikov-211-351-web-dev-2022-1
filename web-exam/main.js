@@ -51,12 +51,12 @@ async function main() {
             routeTable.appendChild(routeRow);
 
             let routeName = document.createElement('div'); // name
-            routeName.classList.add("col-2","border-start", "border-end", "text-center");
+            routeName.classList.add("col-2","border-start", "border-end", "text-center", "pt-5");
             routeName.innerText = el.name;
             routeRow.appendChild(routeName);
                 
             let routeDescription = document.createElement('div'); // description
-            routeDescription.classList.add("col-4");
+            routeDescription.classList.add("col-4", "pt-3");
             let descriptionText = document.createElement("p");
             descriptionText.classList.add("muted");
             if (el.description.length > 150) {
@@ -72,7 +72,7 @@ async function main() {
             routeRow.appendChild(routeDescription);
 
             let mainObjects = document.createElement('div'); // objects
-            mainObjects.classList.add("col-4", "border-start");
+            mainObjects.classList.add("col-4", "border-start", "pt-3");
             let mainObjectsList = el.mainObject.split("-");
             let counter = 1;
             for (let object of mainObjectsList) {
@@ -86,12 +86,13 @@ async function main() {
             let routeDivForBnt = document.createElement("div"); // button
             routeDivForBnt.classList.add("col-2", "text-center", "border-start");
             let routeBtnForSelect = document.createElement('button');
-            routeBtnForSelect.classList.add("btn", "btn-outline-info", "mt-3");
+            routeBtnForSelect.classList.add("btn", "btn-outline-info", "mt-4");
             routeBtnForSelect.innerText = "Выбрать";
             routeDivForBnt.appendChild(routeBtnForSelect);
             routeRow.appendChild(routeDivForBnt);
             routeBtnForSelect.setAttribute("route-Id", el.id);
             routeBtnForSelect.addEventListener('click', () => {
+                document.querySelector("#headOfTableGuides").hidden = false;
                 idForFilter = el.id;
                 document.querySelector("#nameRouteForGuides").innerText = el.name;
                 downloadGuidesData(el.id).then(resData => {
@@ -115,7 +116,7 @@ async function main() {
         const paginationEl = document.querySelector('.pagination-btns');
         const pagesCount = Math.ceil(routesD.length / routesPP);
         const divEl = document.createElement("div");
-        divEl.classList.add('w-50', "mx-auto", "py-4");
+        divEl.classList.add("py-4", "mx-auto", "w-50");
         
         for (let i = 0; i < pagesCount; i++) {
             const spanEl = displayPaginationBtn(i + 1);
@@ -127,7 +128,7 @@ async function main() {
     function displayPaginationBtn(page) {
 
         const spanEl = document.createElement("span");
-        spanEl.classList.add('p-2', 'mx-2', 'border', 'border-warning');
+        spanEl.classList.add("pagination-btn");
         spanEl.innerText = page
         
         if (currentPage == page) spanEl.classList.add('text-danger',);
@@ -228,22 +229,22 @@ async function main() {
             guideRow.appendChild(guideAvatar);
             
             let guideFio = document.createElement('div'); // FIO
-            guideFio.classList.add("col-3", "border-end", "text-center");
+            guideFio.classList.add("col-3", "border-end", "text-center", "pt-4");
             guideFio.innerText = el.name;
             guideRow.appendChild(guideFio);
 
             let guideLangs = document.createElement('div'); // languages
-            guideLangs.classList.add("col-3", "border-end", "text-center");
+            guideLangs.classList.add("col-2", "border-end", "text-center", "pt-4");
             guideLangs.innerText = el.language;
             guideRow.appendChild(guideLangs);
 
             let guideJobExp = document.createElement('div'); // experience
-            guideJobExp.classList.add("col-1", "border-end", "text-center");
+            guideJobExp.classList.add("col-2", "border-end", "text-center", "pt-4");
             guideJobExp.innerText = el.workExperience;
             guideRow.appendChild(guideJobExp)
 
             let guideCost = document.createElement('div'); // cost per hour
-            guideCost.classList.add("col-2", "border-end", "text-center");
+            guideCost.classList.add("col-2", "text-center", "pt-4");
             guideCost.innerText = el.pricePerHour;
             guideRow.appendChild(guideCost);
 
@@ -254,7 +255,14 @@ async function main() {
             guidesBtnForSelect.innerText = "Выбрать";
             guidesDivForBnt.appendChild(guidesBtnForSelect);
             guideRow.appendChild(guidesDivForBnt);
-
+            guidesDivForBnt.setAttribute("data-bs-toggle", "modal");
+            guidesDivForBnt.setAttribute("data-bs-target", "#modalForOrder");
+            guidesDivForBnt.addEventListener('click', () => {
+                document.querySelector("#nameOfGuideModal").innerText = el.name;
+                document.querySelector("#nameOfRouteModal").innerText = document.querySelector("#nameRouteForGuides").innerText;
+                document.querySelector("#guideId").value = el.id;
+                document.querySelector("#routeId").value = el.route_id;
+            })
 
         })
     }
@@ -308,11 +316,45 @@ async function main() {
         filterForGuides(idForFilter);
     }
 
-  
+    async function addingOrgerToApiHandler(event) {
+        let draftOffer = document.querySelector("#draftOfOffer");
+        draftElements = draftOffer.elements;
+
+        let cost = document.querySelector("#price").innerHTML;
+
+        let form = document.createElement("form");
+        let dataFromModal = new FormData(form);
+
+        dataFromModal.append("guide_id", draftElements["guideId"].value);
+        dataFromModal.append("route_id", draftElements["routeId"].value);
+        dataFromModal.append("date", draftElements["date"].value);
+        dataFromModal.append("time", draftElements["time"].value);
+        dataFromModal.append("duration", draftElements["duration"].value);
+        dataFromModal.append("persons", draftElements["persons"].value);
+        dataFromModal.append("price", price);
 
 
 
-    
+        let offersUrl = new URL(datatUrl + "/orders");
+        offersUrl.searchParams.append("api_key", apiKey);
+
+        let res = await fetch(offerUrl, {
+            method: 'POST',
+            body: dataFromModal
+        });
+        let data = await res.json();
+    }
+
+
+    const map = new mapgl.Map('mapContainer', {
+        center: [37.61938696289053, 55.75135224786582],
+        zoom: 13,
+        key: '23d37e69-27c4-4c33-b946-c75295829643',
+        style: 'c080bb6a-8134-4993-93a1-5b4d8c36a59b'
+    });
+
+
+
     displayRoutesTable(routesData, routesPerPage, currentPage);
     displayPagination(routesData, routesPerPage);
     addObjToSelect(routesData);
@@ -321,9 +363,8 @@ async function main() {
     document.querySelector("#langSelect").onchange = filterForGuidesHandler;
     document.querySelector("#expFrom").onchange = filterForGuidesHandler;
     document.querySelector("#expTo").onchange = filterForGuidesHandler;
+    document.querySelector("#submitionOfOrder").addEventListener("click", addingOrgerToApiHandler)
 
 }
 
-
-  
 main();
