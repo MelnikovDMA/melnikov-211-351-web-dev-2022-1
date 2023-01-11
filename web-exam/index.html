@@ -65,7 +65,7 @@
                     </div>
                 </div>
 
-                <div class="container">
+                <div class="container table-of-routes">
                     <div class="row text-center p-0 border-bottom">
                         <div class="col-2 border-start border-top border-end">
                             <span class="text-white fw-bold">Название</span>
@@ -84,10 +84,61 @@
                     <div class="table-route-list" id="tableRouteList"></div>
 
                     <div class="pagination-btns"></div>
+
                 </div>
             </div>
+        </section>
+
+        <section class="guides-list">
+            <div class="container py-4">
+                <h2 class="text-center">Доступные гиды по маршруту - <span id="nameRouteForGuides"></span></h2>
+
+                <div class="search-form-guides row py-4 ">
+                    <div class="select-lan-div col-5">
+                        <select class="form-select" name="lang" id="langSelect">
+                            <option value="default" selected disabled>Язык экскурсии</option>
+                        </select>
+                    </div>
+                    <div class="work-exp col-7 row">
+                        <div class="col-3"><p>Опыт работы</p></div>
+                        <div class="col-3">
+                            <input type="text" class="form-control" id="expFrom" placeholder="От">
+                        </div>
+                        <div class="col-3">
+                            <input type="text" class="form-control" id="expTo" placeholder="До">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container table-of-guides">
+                    <div class="row text-center p-0 border-bottom">
+                        <div class="col-1 border-start border-top border-end overflow-hidden">
+                            <span class="text-white fw-bold"></span>
+                        </div>
+                        <div class="col-3 border-top border-end">
+                            <span class="text-white fw-bold">ФИО</span>
+                        </div>
+                        <div class="col-3 border-top border-end">
+                            <span class="text-white fw-bold">Язык</span>
+                        </div>
+                        <div class="col-1 border-top border-end">
+                            <span class="text-white fw-bold">Опыт работы</span>
+                        </div>
+                        <div class="col-2 border-top border-end">
+                            <span class="text-white fw-bold">Стоимость услуг в час</span>
+                        </div>
+                        <div class="col-2 border-top border-end">
+                            <span class="text-white fw-bold">...</span>
+                        </div>
+                    </div>
+
+                    <div class="table-guides-list"></div>
 
 
+                </div>
+
+
+            </div>
         </section>
 
     </main>
