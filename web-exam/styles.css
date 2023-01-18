@@ -23,3 +23,9 @@
     margin: 4px;
     padding: 10px;
 }
+
+.heading-line {
+    width: 350px;
+    height: 3px;
+    background-color: rgb(255, 151, 5);
+}

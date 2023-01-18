@@ -107,8 +107,8 @@ async function main() {
 
         })
 
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
     }
     
     function displayPagination(routesD, routesPP) {
@@ -129,7 +129,7 @@ async function main() {
 
         const spanEl = document.createElement("span");
         spanEl.classList.add("pagination-btn");
-        spanEl.innerText = page
+        spanEl.innerText = page;
         
         if (currentPage == page) spanEl.classList.add('text-danger',);
         
@@ -148,7 +148,7 @@ async function main() {
 
     function searchingByName(routesD, searchValueName) {
         let nameOfObj;
-        let selectedObj = document.querySelector("#objSelect").value
+        let selectedObj = document.querySelector("#objSelect").value;
         if(selectedObj != "default" && selectedObj != "notselected") {
             nameOfObj = document.querySelector("#objSelect").value;
         } else {
